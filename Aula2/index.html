@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="formulario">
+        <h1>Cadastro de Usuário</h1>
+
+        <form id="cadastro">
+            <label>Nome *</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required />
+
+            <label>E-mail *</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required />
+
+            <label>Telefone *</label>
+            <input type="tel" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(XX) XXXX-XXXX ou (XX) 9XXXX-XXXX" required/>
+
+            <label>Curso *</label>
+
+            <select id="curso" name="curso" required>
+                <option value="">Selecione seu curso</option>
+                <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                <option value="Ciência da Computação">Ciência da Computação</option>
+                <option value="Engenharia de Computação">Engenharia de Computação</option>
+                <option value="Sistemas de Informação">Sistemas de Informação</option>
+            </select>
+
+            <label>Sexo *</label>
+
+            <div class="radio">
+                <input type="radio" name="sexo" value="Masculino"  /> Masculino
+                <input type="radio" name="sexo" value="Feminino" /> Feminino
+                <input type="radio" name="sexo" value="Outro" /> Outro
+                <input type="radio" name="sexo" value="Prefiro não dizer" /> Prefiro não dizer
+            </div>
+
+            <label>Interesses</label>
+
+            <div class="check" name="interesses">
+                <input type="checkbox" name="HTML" value="HTML" /> HTML
+                <input type="checkbox" name="CSS" value="CSS" /> CSS
+                <input type="checkbox" name="JavaScript" value="JavaScript" /> JavaScript
+                <input type="checkbox" name="Banco de Dados" value="Banco de Dados" /> Banco de Dados
+            </div>
+
+            <label>Observações</label>
+
+            <textarea id="obs"></textarea>
+
+            <div class="botoes">
+                <input type="reset" value="Limpar" />
+                <input type="submit" value="Cadastrar" />
+            </div>
+        </form>
+    </div>
+
+    <div class="container resultado" id="resultado">
+        <h1>Cadastro Realizado!</h1>
+
+        <p><strong>Nome:</strong> <span id="rNome"></span></p>
+
+        <p><strong>E-mail:</strong> <span id="rEmail"></span></p>
+
+        <p><strong>Telefone:</strong> <span id="rTelefone"></span></p>
+
+        <p><strong>Curso:</strong> <span id="rCurso"></span></p>
+
+        <p><strong>Sexo:</strong> <span id="rSexo"></span></p>
+
+        <p><strong>Interesses:</strong> <span id="rInteresses"></span></p>
+
+        <p><strong>Observações:</strong> <span id="rObs"></span></p>
+
+        <button onclick="voltar()">Novo Cadastro</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
